@@ -13,21 +13,23 @@ int gcd(int a, int b){
     }
 }
 int main(){
-    int a, b, num, cm, ans = 0;
+    int a, b, num, cm;
     printf("Enter two numbers : ");
     scanf("%d %d", &a, &b);
-    printf("How many CM do u need : ");
+    printf("Till where you wanna find common multiples : ");
     scanf("%d", &num);
+    cm = (a*b)/gcd(a,b);  // this will give the first Common multiple --> LCM
     printf("GCD of %d and %d is %d\n", a, b, gcd(a,b));
-    cm = (a*b)/gcd(a,b);   // this will give the first Common multiple
+       
     // So the series will be the multiplication table of ans.
     // (ans*1), (ans*2), (ans*3),.......,(ans*i)
     printf("First Common Multiple is %d\n", cm);
     printf("Common multiples are : ");
-        while ( ans < num ){
-            ans = ans + cm;
-            if ( ans <= num ) printf("%d ", ans);
-        }
-
+    int i = 1;
+    while ( cm*i <= num ){
+        printf("%d ", cm*i);
+        i++;
+    }
+    
     return 0;
 }
