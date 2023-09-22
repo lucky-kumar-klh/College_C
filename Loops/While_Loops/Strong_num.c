@@ -12,7 +12,7 @@ int main(){
         sum = sum + factorial(digit);
         n = n / 10;
     }
-    //printf("Sum is %d", sum);
+    
     if ( dup == sum ) printf("%d is Strong Number\n", dup);
     else printf("%d is NOT a Strong Number\n", dup);
     
