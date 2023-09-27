@@ -1,15 +1,14 @@
 #include <stdio.h>
+
 int main(){
     int m;
     scanf("%d", &m);
     printf("********************************\n");
     for (int i = 1; i <= m; i++)
     {
-        int a = 1;
-        for (int j = m; j >= 1; j--)
+        for (int j = 1; j <= m; j++)
         {
-            if ( j <= i ) printf("%d ", a++);
-            else printf("  ");
+            printf("* ");   
         }
         printf("\n");
     }
