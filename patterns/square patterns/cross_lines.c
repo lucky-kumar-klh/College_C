@@ -8,7 +8,8 @@ int main(){
     {
         for (int j = 1; j <= m; j++)
         {
-            printf("* ");   
+            if ( i==j || i+j == m+1 ) printf("* ");
+            else printf("  ");
         }
         printf("\n");
     }
