@@ -1,15 +1,13 @@
 #include<stdio.h>
 int main(){
     
-    int n, count = 0, digit;
-    scanf("%d", &n);
-
-    while ( n > 0 ){
-        digit = n % 10;
-        count = count + 1;
-        n = n / 10;
+    int a, sum = 0;
+    scanf("%d", &a);
+    if (a%2==0) a = a+1;
+    for (int i = a; i <= a + 38; i=i+2)
+    {
+        printf("%d ", i);
+        sum += i;
     }
-
-    printf("%d", count);
-
+    printf("\n%d", sum);
 }
