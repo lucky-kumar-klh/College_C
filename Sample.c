@@ -1,13 +1,25 @@
 #include<stdio.h>
 int main(){
-    
-    int a, sum = 0;
-    scanf("%d", &a);
-    if (a%2==0) a = a+1;
-    for (int i = a; i <= a + 38; i=i+2)
+    int n, sum = 0;
+    scanf("%d", &n);
+
+    // for (int i = 1; i <= n; i=i+1)
+    // {
+    //     for (int j = 1; j <= i; j++)
+    //     {
+    //         int a = 1;
+    //         printf("1.%d", a);
+    //     }
+    //     printf("\n");
+    // }
+    int j = 1;
+    for (int i = 0; i < n; i=i+3)
     {
         printf("%d ", i);
-        sum += i;
+        j++;//lucky kumar klh Don;
+        i = j;
+
     }
-    printf("\n%d", sum);
+    
+    
 }
