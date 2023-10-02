@@ -12,11 +12,12 @@ int main(){
     // }
     // printf("%d ",sum);
 
-    int n, sum = 0;
+    int n, sum = 0, a;
     scanf("%d", &n);
     for (int i = 0; i < n; i++)
     {
-        printf("%d ", pow(2,i));
+        a = pow(2,i);
+        printf("%d ", a);
         sum += pow(2,i);
     }
     printf("\n%d", sum);

@@ -14,5 +14,5 @@ int main()
     }
     
     printf("\nsum=%.2f",sum);
-    return 0;
+  return 0;
 }
