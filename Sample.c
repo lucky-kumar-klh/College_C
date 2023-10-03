@@ -1,13 +1,21 @@
-#include<stdio.h> 
-int main(){ 
-    int n; 
-    float sum=0.0; 
-    scanf("%d",&n); 
-    printf("1/1"); 
-    for(float i=3;i<=n*2;){ 
-        printf(" + %f/%f",i,i-1); 
-        sum=sum+1.0+(i/(i-1)); 
-        i=i+2; 
-    } 
-    printf("\nSum of the series is %.3f",sum); 
+#include <stdio.h>
+int main()
+{
+  int i, j, rows, space, coef;
+  printf("Enter number of rows: ");
+  scanf("%d",&rows);
+  for(i = 0; i < rows; i++){
+    for(space = 1; space <= rows-i; space++){
+      printf("   ");
+    }
+    for(j = 0; j <= i; j++)
+    {
+      if(j == 0 || i == 0) coef = 1;
+      else coef = coef * (i - j + 1) / j;
+
+      printf(" %5d",coef);
+      
+    }
+    printf("\n");
+  }
 }
