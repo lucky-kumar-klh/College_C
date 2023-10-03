@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 int main(){
-    int n, j = 0, a = 0;
+    int n, j = 2, a = 0;
     scanf("%d", &n);
     printf("0 ");
     for (int i = 1; i < n; i++, j++)
@@ -14,3 +14,4 @@ int main(){
 }
 //-------------------------------------
 // 0 1 4 9 16 25 36
+// Odd incrementation
