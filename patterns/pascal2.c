@@ -1,28 +1,24 @@
 #include <stdio.h>
 int main(){
     int n;
+    printf("Enter value of n : ");
     scanf("%d", &n);
-    for (int i = 1; i <= n; i++)
+    for (int i = 0; i <= n; i++)
     {
         // for spaces
-        for (int j = 1; j <= n-i; j++)
+        for (int k = 0; k <= n-i; k++)
         {
             printf("  ");
         }
         // for numbers
-        int m = 1;
-        for (int k = 1; k <= 2*i-1; k++)
+        int first = 1;
+        for (int j = 0; j <= i; j++)
         {
-            if ( k%2 != 0 ){
-                printf("%d ", m++);
-            }
-            else printf("  ");
+            printf(" %2d ", first);
+            first = first * (i-j)/(j+1);   // nC(r+1) = nCr * (n-r)/(r+1) 
         }
-        
         printf("\n");
     }
-    int i = 0;
-    int arr[i] = pow(11,i);
     
     return 0;
 }
