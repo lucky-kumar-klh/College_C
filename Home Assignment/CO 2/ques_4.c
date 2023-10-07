@@ -9,7 +9,7 @@ int gcd(int a, int b){
         int rem = b % a;
         if ( rem == 0 ) return a;
         return gcd(rem,b);
-    }
+    } 
 }
 int main(){
     int x, y, z;
