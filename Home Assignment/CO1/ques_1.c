@@ -10,6 +10,7 @@ int main(){
         {
             a = 1;
             printf("%c is a valid character", ch);
+            break;
         }
     }
     for (int i = 97; i <= 122; i++)
@@ -18,6 +19,7 @@ int main(){
         {
             a = 1;
             printf("%c is a valid character", ch);
+            break;
         }
     }
     if ( a == 0 ) printf("%c is NOT a valid character", ch);

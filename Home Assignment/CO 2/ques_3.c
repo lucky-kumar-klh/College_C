@@ -13,7 +13,11 @@ int main(){
     scanf("%d %d", &N, &M);
     for (int i = N; i <= M; i++)
     {
-        if ( isPrime(i) ) printf("%d ", i);
+        if ( isPrime(i) ) {
+            if ( i % 10 == 9 ){
+                printf("%d ", i);
+            }
+        }
     }
     return 0;
 }

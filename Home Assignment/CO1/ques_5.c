@@ -37,12 +37,19 @@ void printDigit(int a){
 int main(){
     int n;
     scanf("%d", &n);
-    int orig = n, digit;
+    int sum = 0,digit;
+    // reverse
     while ( n != 0 )
     {
-        digit = n % 10;
+        sum = sum*10 + (n%10);
+        n /= 10;
+    }
+    
+    while ( sum != 0 )
+    {
+        digit = sum % 10;
         printDigit(digit);
-        n = n / 10;
+        sum = sum / 10;
     }
     
     return 0;
