@@ -3,6 +3,6 @@
 int main(){
     int n;
     scanf("%d", &n);
-    int digit = (ceil)(log10(n));
+    int digit = (floor)((log10(n))+1);
     printf("\n%d", digit);
 }
