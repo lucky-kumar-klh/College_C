@@ -9,7 +9,7 @@ int main(){
         if ( i%2 == 0 )
         {
             int b = n*i;
-            for ( j = n; j >= 1; j--)
+            for ( j = 1; j <= n; j++)
             {
                 printf("%d ", b--);
             }
