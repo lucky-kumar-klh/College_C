@@ -1,15 +1,26 @@
 #include <stdio.h>
-int main(){
-    int N, M;
-    scanf("%d %d", &N, &M);
-    for (int i = N; i <= M; i++)
+#include <math.h>
+int occurance(int num, int key){
+    int count = 0, digit;
+    while ( num != 0 )
     {
-      int a = 0;
-        for (int j = 2; j <= i/2; j++)
-        {
-            if ( i % j == 0 )  a = 1;
-        }
-        if ( a == 0 ) printf("%d ", i);
+        digit = num % 10;
+        if ( digit == key ) count++;
+        num /= 10;
+    }
+    
+    return count;
+}
+int main(){
+    int n, digit;
+    scanf("%d", &n);
+    //printf("num is %d\noccurance of %d is %d", n, key, occurance(n, key));
+    int dup = n;
+    while ( dup != 0 )
+    {
+        digit = dup % 10;
+        printf("%d:%d ", digit,occurance(n,digit));
+        dup /= 10;
     }
     
     return 0;
