@@ -6,7 +6,6 @@ int noOfDigits(int a){
         a = a / 10;
         count++;
     }
-    
     return count;
 }
 int main(){
