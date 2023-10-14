@@ -1,27 +1,12 @@
 #include <stdio.h>
-#include <math.h>
-int occurance(int num, int key){
-    int count = 0, digit;
-    while ( num != 0 )
-    {
-        digit = num % 10;
-        if ( digit == key ) count++;
-        num /= 10;
-    }
-    
-    return count;
-}
 int main(){
-    int n, digit;
+    int n;
     scanf("%d", &n);
-    //printf("num is %d\noccurance of %d is %d", n, key, occurance(n, key));
-    int dup = n;
-    while ( dup != 0 )
-    {
-        digit = dup % 10;
-        printf("%d:%d ", digit,occurance(n,digit));
-        dup /= 10;
-    }
+    
+    int a = 1 + ( n >> 31 ) - ( -n >> 31 );
+    if ( a == 0 ) printf("%d is Negative", n);
+    else if ( a == 1 ) printf("%d is Zero", n);
+    else if ( a == 2 ) printf("%d is Positive", n);
     
     return 0;
 }
