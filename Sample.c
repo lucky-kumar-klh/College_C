@@ -1,12 +1,18 @@
 #include <stdio.h>
 int main(){
-    int n;
+    int n, digit;
     scanf("%d", &n);
-    
-    int a = 1 + ( n >> 31 ) - ( -n >> 31 );
-    if ( a == 0 ) printf("%d is Negative", n);
-    else if ( a == 1 ) printf("%d is Zero", n);
-    else if ( a == 2 ) printf("%d is Positive", n);
-    
-    return 0;
+    for ( int  i = 0; i <= 9; i++) // to check digits from 0 to 9
+    {
+        int dup = n; // for reusing number again and again
+        int count = 0;  
+        while ( dup != 0 ){
+            digit = dup % 10;
+            if ( i == digit ) count++;
+            dup /= 10;
+        }
+        if ( count != 0 ) {
+            printf("%d : %d\n", i, count);
+        }
+    }
 }
