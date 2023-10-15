@@ -1,23 +1,27 @@
 #include <stdio.h>
 int main(){
-    int n; 
-    scanf("%d",&n); 
-    for(int i=1;i<=n;i++){ 
-        for(int j=1;j<=n;j++){ 
-            if(i+j>n) 
-            printf("+ "); 
-            else printf("  "); 
-        } 
-        printf("\n"); 
-    } 
-    for(int i=1;i<=n;i++){ 
-        for(int j=1;j<=i;j++){ 
-            printf("  "); 
-        } 
-        for(int j=i;j<n;j++){ 
-            printf("+ "); 
-        } 
-        printf("\n"); 
-   } 
+    int tea; // im ml
+    int busTime; // in minutes
+    scanf("%d %d", &busTime, &tea);
+    int busTimeSec = busTime*60;
+    int teaMin = (tea*5)/60;  // tea time in min
+    int teaSec = (tea*5)%60;  // tea time in seconds
+    // if yes --> teaTime + waliking <= butime or teaTime
+    if ( (teaMin*60)+teaSec + 10*60 <= busTime*60 )  // 10 min by walk
+    {
+        printf("Yes, By walking");
+    }
+    else if ( (teaMin*60)+teaSec + 5*60 <= busTime*60 ) // 5 min by bike
+    {
+        printf("Only by using bike");
+    }
+    else if ( (teaMin*60)+teaSec + 10*60 > busTime*60 )
+    {
+        int totalTime = (teaMin*60)+teaSec + 10*60;
+        int lateMin = teaMin + 10;
+        int lateSec = teaSec; 
+        printf("NO, He will be late by %d min and %d seconds", (teaMin+5)-busTime, lateSec);
+    }
+    
     return 0;
 }
