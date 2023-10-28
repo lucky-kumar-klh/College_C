@@ -15,10 +15,10 @@ int main(){
     int x, y, z;
     scanf("%d %d %d", &x, &y, &z);
     int num3_gcd = gcd(x,y);
-    int num3_lcm = (x*y)/gcd(x,y);
+    //int num3_lcm = (x*y)/gcd(x,y);
     int ans_gcd = gcd(num3_gcd,z);
-    int ans_lcm = (x*y*z)/gcd(num3_lcm,z);
+    //int ans_lcm = (x*y*z)/gcd(num3_lcm,z);
     printf("GCD (%d, %d, %d) is %d", x, y, z, ans_gcd);
-    printf("\nLCM (%d, %d, %d) is %d", x, y, z, ans_lcm);
+    //printf("\nLCM (%d, %d, %d) is %d", x, y, z, ans_lcm);
     return 0;
 }
