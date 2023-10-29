@@ -3,17 +3,13 @@
 #include <stdlib.h>
 #include <stdbool.h>
 int main(){
-    int n, m;
-    scanf("%d", &n);
-    for (int i = 1; i <= n; i++)
+    int num, digit;
+    scanf("%d", &num);
+    digit = (floor)(log10(num)+1);
+    if ( digit<= 5 )
     {
-        for (int j = 1; j <= n; j++)
-        {
-            if ( i==1||j==1||i==n||j==n||i==j||(i+j)==n+1) printf("* ");
-            else printf("  ");
-        }
-        printf("\n");
+        printf("no of digits are %d", digit);
     }
-    
+    else printf("max 5 digit num only");
     return 0;
 }
