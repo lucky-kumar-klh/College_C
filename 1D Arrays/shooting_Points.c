@@ -1,0 +1,2 @@
+// shooting practice of n rounds and points range from 50 to 100 (100 - more accurate, 50 - less accucrate)
+// find how many full points he got and min points he got and which point he got more number of times/points
