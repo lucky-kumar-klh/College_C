@@ -1,35 +1,26 @@
 #include <stdio.h>
-#include <math.h>
 #include <limits.h>
-#include <stdbool.h>
-#include <stdlib.h>
-int maximum(int arr[], int n){
-    int max = INT_MIN;
+int secondLargest(int arr[], int n){
+    int max1 = INT_MIN, max2 = INT_MIN;
+    // find largest element
+    for (int i = 0; i < n; i++)
+        if ( arr[i] > max1 ) max1 = arr[i];
+    // find second largest element
     for (int i = 0; i < n; i++){
-        if ( arr[i] > max ) 
-            max = arr[i];
+        if ( arr[i] > max2 && arr[i] < max1 ) max2 = arr[i];
     }
-    printf("\nLargest = %d", max);
-    return max;
+    return max2;
 }
-int secondMax(int arr[], int n, int max){
-    int s_max;
-    for (int i = 0; i < n; i++){
-        if ( arr[i] < max )
-            s_max = arr[i];
-    }
-    printf("Second = %d", s_max);
-    return s_max;
+int secondSmallest(int arr[], int n){
+    int min1 = INT_MAX, min2 = INT_MAX;
+    // find smallest element 
+    
 }
 int main(){
-
     int n;
     scanf("%d", &n);
     int arr[n];
     for (int i = 0; i < n; i++) scanf("%d", &arr[i]); 
-
-    int max1 = maximum(arr, n);
-    int max2 = secondMax(arr, n, max1);
-    printf("Sencond largest = %d", max2);
+    printf("Second Largest Element = %d", secondLargest(arr, n));
     return 0;
 }
