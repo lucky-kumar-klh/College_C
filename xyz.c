@@ -22,6 +22,5 @@ int main(){
         int lateSec = teaSec; 
         printf("NO, He will be late by %d min and %d seconds", (teaMin+5)-busTime, lateSec);
     }
-    
     return 0;
 }
