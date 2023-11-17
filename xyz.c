@@ -1,26 +1,49 @@
 #include <stdio.h>
+int min ( int a, int b ){
+    if ( a < b ) return a;
+    else return b;
+}
+int max ( int a, int b ){
+    if ( a > b ) return a;
+    else return b;
+}
+void print ( int m, int n, int arr[m][n] ){
+    printf("\nYour given matrix : \n");
+    for (int i = 0; i < m; i++){
+        for (int j = 0; j < n; j++){
+            printf("%d ", arr[i][j]);
+        }
+        printf("\n");
+    }
+}
 int main(){
-    int tea; // im ml
-    int busTime; // in minutes
-    scanf("%d %d", &busTime, &tea);
-    int busTimeSec = busTime*60;
-    int teaMin = (tea*5)/60;  // tea time in min
-    int teaSec = (tea*5)%60;  // tea time in seconds
-    // if yes --> teaTime + waliking <= butime or teaTime
-    if ( (teaMin*60)+teaSec + 10*60 <= busTime*60 )  // 10 min by walk
-    {
-        printf("Yes, By walking");
+    int m, n, maxi, mini;
+    printf("Enter row & column : ");
+    scanf("%d %d", &m, &n);
+    int arr[m][n], ans[2][n];
+    printf("Enter elements : ");
+    for (int i = 0; i < m; i++){
+        for (int j = 0; j < n; j++)
+            scanf("%d", &arr[i][j]);
     }
-    else if ( (teaMin*60)+teaSec + 5*60 <= busTime*60 ) // 5 min by bike
-    {
-        printf("Only by using bike");
+    for (int i = 0; i < m; i++){
+        maxi = -99999, mini = 99999;
+        for (int j = 0; j < n; j++){
+            maxi = max ( maxi, arr[j][i] );
+            mini = min ( mini, arr[j][i] );
+        }
+        ans[0][i] = mini;
+        ans[1][i] = maxi;
     }
-    else if ( (teaMin*60)+teaSec + 10*60 > busTime*60 )
-    {
-        int totalTime = (teaMin*60)+teaSec + 10*60;
-        int lateMin = teaMin + 10;
-        int lateSec = teaSec; 
-        printf("NO, He will be late by %d min and %d seconds", (teaMin+5)-busTime, lateSec);
+    print ( m, n, arr );
+    printf("\n");
+    for (int i = 0; i < 2; i++){
+        
+        for (int j = 0; j < m; j++){
+            printf("%d ", ans[i][j]);
+        }
+        printf("\n");
     }
+    
     return 0;
 }
