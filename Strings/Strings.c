@@ -1,14 +1,29 @@
 #include <stdio.h>
 #include <string.h>  // functions that perform operations on string 
 #include <ctype.h>  // functions that perform operations on charachter 
+int reverse ( char ch[] , int length ){
+    char copy[50]; 
+    for (int i = length-1, j = 0 ; i >= 0; i--, j++){
+        copy[j] = ch[i];
+    }
+    printf("%s\n%s\n", ch, copy);
+    if ( strcmp(ch, copy) == 0 ) return 1;
+    else return 0;
+}
 int main(){
 
     char a[50];
     scanf(" %[^\n]s", a);
-    char b[50];
-    scanf(" %[^\n]s", b);
-
-    printf("%s", strcat(a,b));
+    // char b[50];
+    // scanf(" %[^\n]s", b);
+    int len = strlen(a);
+    //printf("Size = %d\n", len);
+    if ( reverse(a, len) ) printf("Palindrome");
+    else printf("Not Palindrome");
+    // char *b = strrev(a);
+    // if ( strcmp(a, b) == 0 ) printf("Palindrome");
+    // else printf("Not Palindrome"); 
+    // // printf("%s", strcat(a,b));
 
     return 0;
 }
