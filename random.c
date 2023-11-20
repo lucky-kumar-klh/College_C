@@ -1,8 +1,6 @@
 #include <stdio.h>
-int main()
-{
-int n, i;
-printf("Enter any number : ");
-scanf("%d",&n);
-
+#include <string.h>
+int main(){
+    
+    return 0;
 }
