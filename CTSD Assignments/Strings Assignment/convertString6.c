@@ -1,7 +1,4 @@
 #include <stdio.h>
-void swap ( char* a, char* b ){
-    *b = ( *b + *a ) - ( *a = *b );
-}
 int main(){
     char ch[100], swapLetter;
     scanf(" %[^\n]s", ch);
