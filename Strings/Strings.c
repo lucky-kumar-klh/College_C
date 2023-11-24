@@ -23,7 +23,7 @@ int main(){
     // char *b = strrev(a);
     // if ( strcmp(a, b) == 0 ) printf("Palindrome");
     // else printf("Not Palindrome"); 
-    // // printf("%s", strcat(a,b));
+    // printf("%s", strcat(a,b));
 
     return 0;
 }

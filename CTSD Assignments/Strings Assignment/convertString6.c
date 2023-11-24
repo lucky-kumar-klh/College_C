@@ -13,15 +13,19 @@ int main(){
         else 
             ch[i] += 32;
         // swap vowels
-        if ( ch[i]=='a' || ch[i]=='e' || ch[i]=='i' || ch[i]=='o' || ch[i]=='u' ){
-            int position = ;
+        if ( ch[i]=='a'||ch[i]=='e'||ch[i]=='i'||ch[i]=='o'||ch[i]=='u'||ch[i]=='A'||ch[i]=='E'||ch[i]=='I'||ch[i]=='O'||ch[i]=='U'){
+            swapLetter = 32;
             if ( ch[i] >= 97 && ch[i] <= 109 ){
-                position = ch[i] - 'a'; 
-                swapLetter = 122-position;
+                swapLetter = 122 - (ch[i] - 97);
             }
             else if ( ch[i] >= 110  && ch[i] <= 122 ){
-                position = 122-ch[i];
-                swapLetter = 97 + position; 
+                swapLetter = 97 + (122 - ch[i]); 
+            }
+            if ( ch[i] >= 65 && ch[i] <= 77 ){
+                swapLetter = 90 - (ch[i] - 65);
+            }
+            else if ( ch[i] >= 78  && ch[i] <= 90 ){
+                swapLetter = 65 + (90 - ch[i]); 
             }
             ch[i] = swapLetter;
         }
@@ -31,4 +35,3 @@ int main(){
         printf("%c", ch[i]);
     return 0;
 }
-// a = 97, z = 122 :: 122-97 = 25
