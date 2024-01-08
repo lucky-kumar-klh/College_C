@@ -1,49 +1,56 @@
 #include <stdio.h>
-int min ( int a, int b ){
-    if ( a < b ) return a;
-    else return b;
+#define n 20
+int arr[n];
+int rear = -1, front = -1;
+
+void enqueue(){
+	int value;
+	printf("Enter value : ");
+	scanf("%d", &value);
+	if (front == -1){   // empty queue
+		front = 0, rear = 0;
+		arr[front] = value;
+	}
+	else if (front == n-1){
+		printf("Queue is full");
+	}
+	else {
+		front++;
+		arr[front] = value;
+	}
 }
-int max ( int a, int b ){
-    if ( a > b ) return a;
-    else return b;
+
+void dequeue(){
+	if (front == -1){   // Empty Queue
+		printf("Queue is Empty");
+	}
+	else if (front == rear){    // Only one element is left
+		printf("%d is dequeued", arr[rear]);
+		rear = -1, front = -1;
+	}
+	else {
+		printf("%d is dequeued", arr[rear]);
+		rear++;
+	}
 }
-void print ( int m, int n, int arr[m][n] ){
-    printf("\nYour given matrix : \n");
-    for (int i = 0; i < m; i++){
-        for (int j = 0; j < n; j++){
-            printf("%d ", arr[i][j]);
-        }
-        printf("\n");
-    }
+
+void display(){
+	if (front == -1){
+		printf("Queue is Empty");
+	}
+	else {
+		printf("\nQueue is : ");
+		for (int i = rear; i <= front; i++){
+			printf("%d ", arr[i]);
+		}
+	}
 }
+
 int main(){
-    int m, n, maxi, mini;
-    printf("Enter row & column : ");
-    scanf("%d %d", &m, &n);
-    int arr[m][n], ans[2][n];
-    printf("Enter elements : ");
-    for (int i = 0; i < m; i++){
-        for (int j = 0; j < n; j++)
-            scanf("%d", &arr[i][j]);
-    }
-    for (int i = 0; i < m; i++){
-        maxi = -99999, mini = 99999;
-        for (int j = 0; j < n; j++){
-            maxi = max ( maxi, arr[j][i] );
-            mini = min ( mini, arr[j][i] );
-        }
-        ans[0][i] = mini;
-        ans[1][i] = maxi;
-    }
-    print ( m, n, arr );
-    printf("\n");
-    for (int i = 0; i < 2; i++){
-        
-        for (int j = 0; j < m; j++){
-            printf("%d ", ans[i][j]);
-        }
-        printf("\n");
-    }
-    
-    return 0;
+	enqueue();
+	enqueue();
+	enqueue();
+	dequeue();
+	display();
+	return 0;
 }
