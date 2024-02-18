@@ -56,9 +56,14 @@ void insertAtLast() {
     Node* newNode = (Node*)malloc(sizeof(12));
     newNode -> data = value;
     
-    currentNode -> next = newNode;
-    currentNode = newNode;
-    newNode -> next = head;
+    if (head -> next == head) {
+        head -> next = newNode;
+        newNode -> next = head;
+    } else {
+        newNode -> next = head;
+        currentNode -> next = newNode;
+        currentNode = newNode;
+    }
     list_length++;
 }
 
@@ -127,7 +132,7 @@ void printList() {
 }
 
 void showOptions() {
-    printf("\n1. Create Lsit\n2. Insert At Begin\n3. Insert At Last\n4. Insert At Position\n5. Display List\n6. Exit\nYour Choice: ");
+    printf("\n1. Create List\n2. Insert At Begin\n3. Insert At Last\n4. Insert At Position\n5. Display List\n6. Exit\nYour Choice: ");
     scanf("%d", &choice);
 }
 
