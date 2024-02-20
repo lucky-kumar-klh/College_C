@@ -11,6 +11,7 @@ typedef struct Node {
 Node *head = NULL, *last = NULL;
 
 void enque() {  // Insert at last
+    
     do {
         Node* newNode = (Node*)malloc(12);
         int data;
