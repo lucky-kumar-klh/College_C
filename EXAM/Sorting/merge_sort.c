@@ -12,11 +12,11 @@ void print_array(int arr[], int n) {
     printf("\n");
 }
 /*
-           s         e
-array =    1 2 3 4 5 6 
-create  1 2 3    |    4 5 6
-copy -> 1 2 3    |    4 5 6
-merge->    1 2 3 4 5 6
+index->       s         e
+array =       1 2 3 4 5 6 
+create->   [ ]     |     [ ]
+copy ->   1 2 3    |    4 5 6
+merge->      1 2 3 4 5 6
 
 */
 void merge(int arr[], int start, int end) { 
