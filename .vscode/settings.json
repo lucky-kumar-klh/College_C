@@ -4,6 +4,7 @@
         "algorithm": "c",
         "format": "c",
         "random": "c",
-        "regex": "c"
+        "regex": "c",
+        "stdio.h": "c"
     }
 }
